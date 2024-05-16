@@ -118,12 +118,12 @@ class Game {
       // }
 
       // Shoot projectile from enemy
-      if (this.frames % 60 === 0) {
+      if (this.frames % 15 === 0) {
         // Adjust this timing according to your game's needs
         obstacle.shootProjectile();
       }
       // Shoot projectile from enemy
-      if (this.frames % 60 === 0) {
+      if (this.frames % 15 === 0) {
         // Adjust this timing according to your game's needs
         obstacle.shootProjectile2();
       }
