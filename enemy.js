@@ -69,7 +69,7 @@ class Enemy {
     // Example bullet properties
     const bulletSpeed = 2;
     const bulletSize = 20;
-    const bulletSprite = "bullets.png";
+    const bulletSprite = "test.png";
     const bulletDamage = 1;
 
     // Create a new bullet starting from the center of the enemy

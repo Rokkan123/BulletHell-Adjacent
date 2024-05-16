@@ -104,6 +104,7 @@ class Game {
           this.obstacles.splice(i, 1);
           bullet.element.remove();
           obstacle.element.remove();
+          this.score++;
         }
         if (bullet.y < -20) {
           this.player.bulletsArr.splice(i, 1);
