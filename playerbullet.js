@@ -3,8 +3,8 @@ class PlayerBullet {
     this.gameScreen = gameScreen;
     this.x = x;
     this.y = y;
-    this.speed = speed;
-    this.angle = angle;
+    this.speed = speed; //speed
+    this.angle = angle; //angle shot
     this.size = size; // Size of the bullet
     this.sprite = sprite; // URL or path to the bullet sprite
     this.damage = damage; // Damage dealt by the bullet

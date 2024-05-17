@@ -69,7 +69,7 @@ class Game {
       this.gameOverScreen();
     }
 
-    // Update enemies and check collisions
+    // Update enemies and bullet and check of both collisions
     this.obstacles.forEach((obstacle, i) => {
       obstacle.move();
 
@@ -114,12 +114,6 @@ class Game {
         }
       });
 
-      // if (this.obstacles.length() === 0) {
-      //   obstacle.element.remove();
-      //   this.obstacles.splice(i, 1);
-      //   this.score++;
-      // }
-
       // Shoot projectile from enemy
       if (this.frames % 15 === 0) {
         // Adjust this timing according to your game's needs
@@ -134,30 +128,11 @@ class Game {
         // Adjust this timing according to your game's needs
         obstacle.shootProjectile3();
       }
-      // if (this.player.isShooting) {
-      //   this.player.shootProjectilePlayer();
-      // }
     });
   }
 
   update() {
     this.player.move();
-
-    // this.obstacles.forEach((obstacle, i) => {
-    //   obstacle.move();
-    //   if (this.player.didCollide(obstacle)) {
-    //     obstacle.createExplosion();
-    //     obstacle.element.remove();
-    //     this.obstacles.splice(i, 1);
-    //     this.lives -= 1;
-    //   }
-
-    //   if (obstacle.top > 640) {
-    //     obstacle.element.remove();
-    //     this.obstacles.splice(i, 1);
-    //     this.score++;
-    //   }
-    // });
 
     this.scoreElement.innerHTML = this.score;
     this.livesElement.innerHTML = this.lives;
@@ -179,8 +154,7 @@ class Game {
     this.gameScreen.style.width = `${0}px`;
     this.gameScreen.style.display = "none";
     console.log("Game end screen", this.stats);
-    // this.stats.style.display = "none";
-    // this.clockContainer.style.display = "none";
+
     this.gameEndScreen.style.display = "inherit";
     if (this.timer <= 0) {
       this.endMessage.innerText = `You won! You finished with a score of ${

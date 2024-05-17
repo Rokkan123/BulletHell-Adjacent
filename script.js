@@ -26,7 +26,6 @@ window.onload = function () {
       if (e.key === "ArrowUp" || e.key === "w") {
         game.player.directionY = 0;
       }
-      //console.log("keyups");
     });
 
     document.addEventListener("keydown", (e) => {

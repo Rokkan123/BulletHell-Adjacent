@@ -86,7 +86,6 @@ class Player {
     const centerX = this.left + this.width / 2;
     const centerY = this.top + this.height / 2;
     let direction = -2;
-    // for (let i = 0; i < direction; i++) {}1.5,2,4//
 
     const angleToTarget = Math.PI / direction; // 90 degrees in radians
     // Example bullet properties

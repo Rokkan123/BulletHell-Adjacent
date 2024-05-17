@@ -28,7 +28,6 @@ class Enemy {
     const centerX = this.left + this.width / 2;
     const centerY = this.top + this.height / 2;
     let direction = 1.5;
-    // for (let i = 0; i < direction; i++) {}1.5,2,4//
 
     const angleToTarget = Math.PI / direction; // 90 degrees in radians
 
@@ -62,7 +61,6 @@ class Enemy {
     const centerX = this.left + this.width / 2;
     const centerY = this.top + this.height / 2;
     let direction = 1.8;
-    // for (let i = 0; i < direction; i++) {}1.5,2,4//
 
     const angleToTarget = Math.PI / direction; // 90 degrees in radians
 
@@ -94,7 +92,6 @@ class Enemy {
     const centerX = this.left + this.width / 2;
     const centerY = this.top + this.height / 2;
     let direction = 2.2;
-    // for (let i = 0; i < direction; i++) {}1.5,2,4//
 
     const angleToTarget = Math.PI / direction; // 90 degrees in radians
 
@@ -127,7 +124,6 @@ class Enemy {
     if (this.top < 100) {
       this.top += 3;
       this.updatePostion();
-      // return;
     }
 
     if (this.top >= 100) {
@@ -158,10 +154,6 @@ class Enemy {
 
       this.updatePostion();
     }
-    // if (this.top >= 100 && this.left <= 0) {
-    //   this.left += -3;
-    //   this.updatePostion();
-    // }
   }
 
   updatePostion() {
