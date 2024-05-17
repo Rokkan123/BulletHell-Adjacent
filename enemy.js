@@ -4,12 +4,12 @@ class Enemy {
     this.left = 263;
     this.directionX = 0;
     this.top = -150;
-    this.width = 63;
+    this.width = 150;
     this.height = 150;
     this.bulletsArr = [];
     this.health = 10;
     this.element = document.createElement("img");
-    this.element.src = "playercraft.png";
+    this.element.src = "enemysprite.png";
     this.element.style.position = "absolute";
     this.element.style.left = `${this.left}px`;
     this.element.style.top = `${this.top}px`;
@@ -69,7 +69,39 @@ class Enemy {
     // Example bullet properties
     const bulletSpeed = 2;
     const bulletSize = 20;
-    const bulletSprite = "test.png";
+    const bulletSprite = "bullets.png";
+    const bulletDamage = 1;
+
+    // Create a new bullet starting from the center of the enemy
+    const bullet = new Bullet(
+      this.gameScreen,
+      centerX,
+      centerY,
+      bulletSpeed,
+      angleToTarget,
+      bulletSize,
+      bulletSprite,
+      bulletDamage
+    );
+
+    this.bulletsArr.push(bullet);
+    // Update the bullet position in each frame
+    setInterval(() => {
+      bullet.update();
+    }, 20);
+  }
+  shootProjectile3() {
+    const centerX = this.left + this.width / 2;
+    const centerY = this.top + this.height / 2;
+    let direction = 2.2;
+    // for (let i = 0; i < direction; i++) {}1.5,2,4//
+
+    const angleToTarget = Math.PI / direction; // 90 degrees in radians
+
+    // Example bullet properties
+    const bulletSpeed = 2;
+    const bulletSize = 40;
+    const bulletSprite = "bullets.png";
     const bulletDamage = 1;
 
     // Create a new bullet starting from the center of the enemy

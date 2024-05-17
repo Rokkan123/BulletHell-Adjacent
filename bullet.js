@@ -56,4 +56,19 @@ class Bullet {
       return false;
     }
   }
+  createExplosion() {
+    let newElement = document.createElement("img");
+    newElement.src = "explosion.gif";
+    newElement.style.position = "absolute";
+    newElement.style.left = `${this.left}px`;
+    newElement.style.top = `${this.top}px`;
+    newElement.style.width = `50px`;
+    newElement.style.height = `50px`;
+
+    this.gameScreen.appendChild(newElement);
+
+    setTimeout(() => {
+      newElement.remove();
+    }, 1250);
+  }
 }

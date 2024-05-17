@@ -3,7 +3,7 @@ class Game {
     this.startScreen = document.getElementById("game-intro");
     this.gameScreen = document.getElementById("game-screen");
     this.gameEndScreen = document.getElementById("game-end");
-    this.player = new Player(this.gameScreen, 215, 450, 66, 150, "craft2.png");
+    this.player = new Player(this.gameScreen, 108, 175, 33, 75, "craft2.png");
     this.height = 800;
     this.width = 600;
     this.obstacles = [];
@@ -76,7 +76,9 @@ class Game {
       obstacle.bulletsArr.forEach((bullet, x) => {
         if (bullet.bulletCollide(this.player)) {
           obstacle.bulletsArr.splice(x, 1);
+          bullet.createExplosion();
           bullet.element.remove();
+
           if (this.lives) {
             this.lives--;
           } else {
@@ -105,6 +107,7 @@ class Game {
           bullet.element.remove();
           obstacle.element.remove();
           this.score++;
+          obstacle.createExplosion();
         }
         if (bullet.y < -20) {
           this.player.bulletsArr.splice(i, 1);
@@ -126,6 +129,10 @@ class Game {
       if (this.frames % 15 === 0) {
         // Adjust this timing according to your game's needs
         obstacle.shootProjectile2();
+      }
+      if (this.frames % 90 === 0) {
+        // Adjust this timing according to your game's needs
+        obstacle.shootProjectile3();
       }
       // if (this.player.isShooting) {
       //   this.player.shootProjectilePlayer();

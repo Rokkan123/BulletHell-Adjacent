@@ -14,7 +14,7 @@ class Player {
     this.sprite = ""; // URL or path to the bullet sprite
     this.damage = 0; // Damage dealt by the bullet
     this.element = document.createElement("img");
-    this.element.src = "craft2.png";
+    this.element.src = "playersprite.png";
     this.element.style.position = "absolute";
     this.element.style.left = `${this.left}px`;
     this.element.style.top = `${this.top}px`;
@@ -92,7 +92,7 @@ class Player {
     // Example bullet properties
     const bulletSpeed = 6;
     const bulletSize = 20;
-    const bulletSprite = "./bullets.png";
+    const bulletSprite = "./bulletofplayer.png";
     const bulletDamage = 1;
 
     const playerBullet = new PlayerBullet(
